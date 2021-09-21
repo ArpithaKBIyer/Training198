@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Info</title>
+    <script>
+        function saveData() {
+            
+            var eid=parseInt(document.getElementById("eid").value);
+            var ename=document.getElementById("ename").value;
+            var salary=parseInt(document.getElementById("esal").value);
+            var dno=parseInt(document.getElementById("dno").value);
+
+            sessionStorage.setItem("emplyeeid",eid);
+            sessionStorage.setItem("employeename",ename);
+            sessionStorage.setItem("employeesalary",salary);
+            sessionStorage.setItem("departmentno",dno);
+
+        }
+        </script>
+</head>
+<body>
+    <table>
+    <form >
+       <fieldset>
+           <legend>Employee Info</legend>
+        <label>Enter Employee ID</label>
+        <input type="number" id="eid" min="1" required />
+        <br/>
+        <label>Enter EmployeeName</label>
+        <input type="text" id="ename" minlength="1" maxlength="20" required />
+        <br/>
+        <label>Enter Dept num</label>
+        <input type="number" id="dno" min="1"  required />
+        <br/>
+        <label>Enter employee salary</label>
+        <input type="number" id="esal" min="10000" max="100000"  />
+        <br/>
+        <label>Enter reporting mng</label>
+        <input type="text" id="mng" required />
+        <br/>
+        <label>Enter DOJ</label>
+        <input type="datetime-local" id="datetim"  />
+        <br/>
+<input  type="submit" value="Submit" id="s1" onclick="saveData()"/>
+<input type="reset" value="New Product" id="np" />
+<a href="showinfo.html">Show Data</a>
+<a href="showempinfo.html">shoe emp data</a>
+        
+
+</fieldset>
+
+    </form>
+</table>
+</body>
+</html>
